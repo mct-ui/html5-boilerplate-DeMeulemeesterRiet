@@ -156,13 +156,21 @@ img {
 */
 
 html {
+  font-size: calc($root-font-size/16*100%); // = 16px
+  line-height: 1.5; // = 24px
+  font-family: $font-family-primary; // global font-family
+  color: $color-text; // global text color
+  scroll-behavior: smooth; // smooth scrolling
 }
 
 /*
     Customize the background color and color to match your design.
 */
 
+//als je iets selecteerd:
 ::selection {
+  background: $color-primary-light; // background color
+  color: white; // text color
 }
 
 /*
@@ -172,17 +180,43 @@ html {
 */
 
 h1 {
+  font-size: $ms5;
+  font-weight: 700;
+  line-height: calc($baseline *5);
+  margin-bottom: $space-m;
+
+  @include mq(bp1){
+    font-size: $ms9;
+    line-height: calc($baseline * 6);
+  }
+  @include mq(bp2) {
+    font-size: $ms11;
+    line-height: calc($baseline * 8);
+  }
+    
 }
 
 h2 {
+  font-weight: 700;
+  font-size: $ms3;
+  line-height: calc($baseline *4);
+  margin-bottom: $space-m;
 }
 
 h3 {
+  font-weight: 700;
+  font-size: $ms1;
+  line-height: calc($baseline *3);
+  margin-bottom: $space-m;
 }
 
 h4,
 h5,
 h6 {
+  font-weight: 700;
+  font-size: $ms0;
+  line-height: calc($baseline *3);
+  margin-bottom: $space-m;
 }
 
 p,
@@ -192,35 +226,57 @@ dl,
 table,
 address,
 figure {
+  margin-bottom: $space-m;
 }
 
 ul,
 ol {
+  padding: 0;
+  list-style-position: inside;
 }
 
 li ul,
 li ol {
+  margin-bottom: 0;
 }
 
 blockquote {
+  font-family: $font-family-secondary;
+  font-style: italic;
+  font-size: $ms3;
+  line-height: calc($baseline *4);
+  margin-bottom: $space-m;
 }
 
 figcaption {
+  font-size: $ms-1;
+  line-height: calc($baseline *2);
+  margin-top: $space-xs;
+  color: $color-text-lighter;
 }
 
 hr {
+  border: 0;
+  height: 1px;
+  background: $color-border;
+  margin-bottom: $space-m;
 }
 
 a {
+  color: $color-primary;
+  transition: all 0.1s ease-in-out;
 }
 
 a:hover {
+  color: $color-primary-lighter;
 }
 
 a:visited {
+  color: $color-primary
 }
 
 a:active {
+  color: $color-primary-dark
 }
 
 /*---------------------------------------/*
@@ -234,6 +290,28 @@ a:active {
 */
 
 .o-row {
+  padding: $space-m $space-m 0;
+  // is zelfde als
+  // padding: $space-m $space-m 0 $space-m;
+  display: flow-root;
+}
+
+.o-row--primary{
+  background-color: $color-primary;
+  color: white;
+}
+
+.o-row--dark {
+  background-color: $color-text;
+  color: white;
+}
+
+.o-row--l {
+  @include mq(bp2){
+    padding: $space-xl $space-xl $space-m;
+    // is zelfde als
+    // padding: $space-xl $space-xl $space-m $space-xl;
+  }
 }
 
 /*
@@ -243,6 +321,13 @@ a:active {
 */
 
 .o-container {
+  max-width: $container-max-width;
+
+  // margin: 0 auto;
+  // volgende is veiliger
+  margin-left: auto;
+  margin-right: auto;
+  
 }
 
 /*
@@ -271,9 +356,17 @@ a:active {
 /* gutter modifiers, these affect o-layout__item too */
 
 .o-layout--gutter {
+  // margin: 0 -12px;
+  // Als je dit schrijft met variables wordt dit zoiets:
+  margin-left: calc($grid-gutter / -2);
+  margin-right: calc($grid-gutter / -2);
 }
 
 .o-layout--gutter > .o-layout__item {
+  // padding: 0 12px;
+  // Als je dit schrijft met variables wordt dit zoiets:
+  padding-left: calc($grid-gutter / 2);
+  padding-right: calc($grid-gutter / 2);
 }
 
 /* reverse horizontal row modifier */
