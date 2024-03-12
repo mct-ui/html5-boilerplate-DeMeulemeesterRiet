@@ -5,3 +5,6 @@ Dit zijn de startfiles voor de labo's van UI van MCT. In deze module gaan we een
 # HTML5 boilerplate
 
 This is my HTML5 boilerplate. I use it to build fast, robust, and adaptable web apps or sites.
+
+
+
