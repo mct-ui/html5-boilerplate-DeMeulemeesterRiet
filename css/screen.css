@@ -225,8 +225,8 @@ a:active {
 
 /* gutter modifiers, these affect o-layout__item too */
 .o-layout--gutter {
-  margin-left: -0.75rem;
-  margin-right: -0.75rem;
+  margin-left: -1rem;
+  margin-right: -1.5rem;
 }
 
 .o-layout--gutter > .o-layout__item {

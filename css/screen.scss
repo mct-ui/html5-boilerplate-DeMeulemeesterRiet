@@ -358,8 +358,8 @@ a:active {
 .o-layout--gutter {
   // margin: 0 -12px;
   // Als je dit schrijft met variables wordt dit zoiets:
-  margin-left: calc($grid-gutter / -2);
-  margin-right: calc($grid-gutter / -2);
+  margin-left: calc($grid-gutter-s / -1); //of -2
+  margin-right: calc($grid-gutter / -1); //of -2
 }
 
 .o-layout--gutter > .o-layout__item {
